@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+.app {
+  margin: 0 auto;
+  height: 660px;
+  background: url('./image/background.jpg') center no-repeat;
+  justify-content: center;
+  background-size: cover;
+  align-items: center;
+  position: relative;
+  font-family: 'MuseoSansCyrl';
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  outline: 1px solid #e9e8e862;
+  height: 100px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headerBox {
   display: flex;
-  flex-direction: column;
+  max-width: 1170px;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.link {
+  width: 58%;
+  background-color: #cdcbc900;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  color: #d0d1d1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+  color: #929292;
+  cursor: pointer;
+  border-bottom: 1px solid #929292;
+  transition: color .2s, transform .1s;
+}
+
+.header_logo img {
+  width: 315px;
+  height: 100px;
+}
+
+.header_logo img:hover {
+  display: inline-block;
+  background:
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(white, white);
+  background-position: top left, top right, bottom left, bottom right;
+  background-size: 1px 6px, 1px 6px, 6px 1px, 1px 6px, 6px 1px, 6px 1px, 1px 6px, 6px 1px;
+  background-repeat: no-repeat;
+  outline: 1px solid grey;
+}
+
+.appBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.appContainer {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.appBoxText {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+h1 {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, rgba(255, 255, 255), rgb(255, 63, 4));
+  width: 65%;
+  line-height: 43px;
+}
+
+.appH1TextBolt {
+  font-size: 58px;
+  text-transform: uppercase;
+}
+
+.appOpen {
+  color: #c4c5c7;
+  font-size: 14px;
+  background:
+    linear-gradient(rgba(14, 31, 45, 0.322), rgb(14, 31, 45)),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(rgba(21, 36, 48, 0.274), rgba(14, 31, 45, 0.295)),
+    linear-gradient(rgba(21, 36, 48, 0.274), rgba(14, 31, 45, 0.295)),
+    linear-gradient(white, white),
+    linear-gradient(white, white),
+    linear-gradient(rgba(21, 36, 48, 0.274), rgba(14, 31, 45, 0.295));
+  background-position: top left, top right, bottom left, bottom right;
+  background-size: 1px 4px, 1px 4px, 1px 4px, 1px 4px, 4px 1px, 4px 1px, 4px 1px, 4px 1px;
+  background-repeat: no-repeat;
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to bottom right, rgba(35, 89, 156, 0.258) 13%, rgba(35, 89, 156, 0.958) 26% 66%, rgba(35, 89, 156, 0.258) 85% 100%) 1;
+  line-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 35px;
+  margin-top: 65px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.line {
+  position: relative;
+  height: 6.5%;
+  left: 21.8%;
+  width: 62%;
+}
+
+.dot {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 5px;
+  right: 0;
+  border: rgb(255, 255, 255) 1px solid;
+  border-radius: 50%;
+}
+
+.line:before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  bottom: 2px;
+  right: 5px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(180, 184, 179, 0.299) 0%, rgba(255, 255, 255, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+
+.line-2 {
+  position: absolute;
+  left: 36px;
+  bottom: 117%;
+  width: 65px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(8, 8, 8, 0.5) 0%, rgba(180, 184, 179, 0.299) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#000000', GradientType=1);
+  transform: skewY(39.3deg);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 376px;
+  width: 376px;
+  margin-right: -31px;
+}
+
+.appBoxTextLeft {
+  width: 60%;
+}
+
+.item p {
+  width: 178px;
+  height: 178px;
+  color: rgba(255, 255, 255, 0.664);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.itemTextBolt {
+  font-size: 60px;
+  margin-top: 12px;
+  margin-bottom: -10px;
+}
+
+.itemTextLittlBig {
+  font-size: 20px;
+}
+
+.itemOne {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.082));
+  border-bottom: 1px solid rgba(211, 172, 172, 0);
+  border-right: 1px solid rgba(151, 28, 28, 0);
+}
+
+.itemTwo {
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.082));
+  border-bottom: 1px solid rgba(80, 18, 18, 0);
+  border-left: 1px solid rgba(151, 28, 28, 0);
+}
+
+.itemThree {
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.082));
+  border-top: 1px solid rgba(158, 10, 10, 0);
+  border-right: 1px solid rgba(151, 28, 28, 0);
+}
+
+.itemFour {
+  background: linear-gradient(to top left, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.082));
+  border-top: 1px solid rgba(170, 14, 14, 0);
+  border-left: 1px solid rgba(151, 28, 28, 0);
+}
+
+.itemOne:hover {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.182));
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to bottom right, rgba(151, 65, 65, 0.0) 46%, rgba(255, 255, 255, 0.282)) 1;
+  border-top: none;
+  border-left: none;
+}
+
+.itemTwo:hover {
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.182));
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to bottom left, rgba(151, 65, 65, 0.148) 46%, rgba(255, 255, 255, 0.282)) 1;
+  border-top: none;
+  border-right: none;
+}
+
+.itemThree:hover {
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.182));
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to top right, rgba(151, 65, 65, 0.0) 46%, rgba(255, 255, 255, 0.282)) 1;
+  border-bottom: none;
+  border-left: none;
+}
+
+.itemFour:hover {
+  background: linear-gradient(to top left, rgba(0, 0, 0, 0.01) 50%, rgba(255, 255, 255, 0.182));
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to top left, rgba(151, 65, 65, 0.0) 46%, rgba(255, 255, 255, 0.282)) 1;
+  border-bottom: none;
+  border-right: none;
 }
