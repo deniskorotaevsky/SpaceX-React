@@ -10,49 +10,32 @@
   font-size: 16px;
 }
 
+.appBlock {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   outline: 1px solid #e9e8e862;
   height: 100px;
-
 }
 
 .headerBox {
   display: flex;
   max-width: 1170px;
   justify-content: center;
+  align-items: center;
   justify-content: space-between;
   margin: 0 auto;
 }
 
-.link {
-  width: 58%;
-  background-color: #cdcbc900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-}
-
-a {
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  color: #d0d1d1;
-}
-
-a:hover {
-  color: #929292;
-  cursor: pointer;
-  border-bottom: 1px solid #929292;
-  transition: color .2s, transform .1s;
+.header_logo {
+  width: 27%;
 }
 
 .header_logo img {
-  width: 315px;
-  height: 100px;
+  width: 100%;
+  height: auto;
 }
 
 .header_logo img:hover {
@@ -72,9 +55,22 @@ a:hover {
   outline: 1px solid grey;
 }
 
-.appBlock {
+.link {
+  width: 58%;
+  height: 100px;
+  background-color: #cdcbc900;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.appBoxText {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  margin-top: 50px;
+  overflow: hidden;
 }
 
 .appContainer {
@@ -84,20 +80,18 @@ a:hover {
   justify-content: space-between;
 }
 
-.appBoxText {
-  display: flex;
-  justify-content: space-between;
-  width: auto;
-  margin-top: 100px;
-  overflow: hidden;
+.appBoxTextLeft {
+  width: 60%;
 }
 
 h1 {
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(to right, rgba(255, 255, 255), rgb(255, 63, 4));
-  width: 65%;
+  width: 26.5rem;
   line-height: 43px;
+  font-size: 25px;
+  margin-top: 70px;
 }
 
 .appH1TextBolt {
@@ -169,11 +163,11 @@ h1 {
 
 .line-2 {
   position: absolute;
-  left: 36px;
-  bottom: 117%;
-  width: 65px;
+  left: 32px;
+  bottom: 121%;
+  width: 70px;
   height: 1px;
-  background: linear-gradient(to right, rgba(8, 8, 8, 0.5) 0%, rgba(180, 184, 179, 0.299) 100%);
+  background: linear-gradient(to right, rgba(14, 13, 13, 0.438) 0%, rgba(180, 184, 179, 0.299) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#000000', GradientType=1);
   transform: skewY(39.3deg);
 }
@@ -187,10 +181,6 @@ h1 {
   margin-right: -31px;
 }
 
-.appBoxTextLeft {
-  width: 60%;
-}
-
 .item p {
   width: 178px;
   height: 178px;
@@ -200,6 +190,7 @@ h1 {
   align-items: center;
   margin: 0 auto;
   flex-direction: column;
+  font-size: 18px;
 }
 
 .itemTextBolt {
@@ -274,4 +265,199 @@ h1 {
   border-image: linear-gradient(to top left, rgba(151, 65, 65, 0.0) 46%, rgba(255, 255, 255, 0.282)) 1;
   border-bottom: none;
   border-right: none;
+}
+
+a {
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  color: #d0d1d1;
+}
+
+a:hover {
+  color: #929292;
+  cursor: pointer;
+  border-bottom: 1px solid #929292;
+  transition: color .2s, transform .1s;
+}
+
+@media (max-width: 1200px) {
+  .link {
+    padding: 0 5px;
+    font-size: 15px;
+  }
+
+  .appContainer {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    height: 80px;
+  }
+
+  .link {
+    font-size: 14px;
+    width: 65%;
+    height: 80px;
+  }
+
+  .line {
+    left: 33.5%;
+    width: 67%;
+  }
+
+  .line-2 {
+    left: 45px;
+    bottom: 100%;
+    width: 55px;
+    transform: skewY(37.3deg);
+  }
+
+  .appH1TextBolt {
+    font-size: 54px;
+  }
+
+  .appOpen {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 22px;
+    line-height: 50px;
+  }
+
+  .appBoxTextLeft {
+    width: 50%;
+  }
+
+  .appBoxText {
+    margin-top: 70px;
+  }
+
+  .item {
+    margin-top: 20px;
+    height: 336px;
+    width: 336px;
+    margin-right: -31px;
+  }
+
+  .item p {
+    width: 158px;
+    height: 158px;
+    font-size: 16px;
+  }
+
+  .itemTextBolt {
+    font-size: 50px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .appContainer {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .appBoxText {
+    flex-direction: column;
+  }
+
+  .appBoxTextLeft {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 100vw;
+    height: auto;
+    margin-top: 120px;
+  }
+
+  .line {
+    display: none;
+    flex-wrap: wrap;
+  }
+
+  .item p {
+    width: 128px;
+    height: 128px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .itemTextBolt {
+    font-size: 42px;
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
+
+  h1{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+
+  .link {
+    display: none;
+  }
+
+  .appH1TextBolt {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 575px) {
+
+  h1{
+    font-size: 44px;
+  }
+
+  .appBoxText {
+    margin-top: 30px;
+  }
+
+  .item {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 530px) {
+
+  .header {
+    height: 60px;
+  }
+
+  .item {
+    margin-top: 60px;
+  }
+  
+  .item p {
+    width: 118px;
+    height: 118px;
+    font-size: 15px;
+  }
+
+   .itemTextBolt {
+    font-size: 32px;
+  }
+
+  h1{
+    width: 100%;
+    font-size: 42px;
+  }
+
+  .appH1TextBolt {
+    font-size: 42px;
+  }
 }
