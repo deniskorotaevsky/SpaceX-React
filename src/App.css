@@ -15,18 +15,18 @@
   flex-direction: column;
 }
 
-.header {
+.headerApp {
   outline: 1px solid #e9e8e862;
-  height: 100px;
 }
 
 .headerBox {
   display: flex;
   max-width: 1170px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   justify-content: space-between;
   margin: 0 auto;
+  height: 100px;
 }
 
 .header_logo {
@@ -55,14 +55,54 @@
   outline: 1px solid grey;
 }
 
-.link {
+.header {
   width: 58%;
-  height: 100px;
-  background-color: #cdcbc900;
+  overflow: hidden;
+}
+
+.slider ul {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   justify-content: space-between;
+  padding-left: 0;
+}
+
+.slider ul li {
+  margin-block: .5rem;
+  list-style: none;
+}
+
+.slider ul li a {
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #d0d1d1;
+  border-bottom: 1px solid #92929200;
+}
+
+.slider ul li a:hover {
+  color: #929292;
+  cursor: pointer;
+  border-bottom: 1px solid #929292;
+  transition: color .2s, transform .1s;
+}
+
+.menu-icon .menu {
+  display: none;
+}
+
+.closed {
+  display: none;
+}
+
+.closed .close {
+  display: block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  justify-content: flex-start;
+  font-size: 60px;
 }
 
 .appBoxText {
@@ -267,48 +307,42 @@ h1 {
   border-right: none;
 }
 
-a {
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  color: #d0d1d1;
-}
-
-a:hover {
-  color: #929292;
-  cursor: pointer;
-  border-bottom: 1px solid #929292;
-  transition: color .2s, transform .1s;
-}
-
 @media (max-width: 1200px) {
-  .link {
+  .header {
     padding: 0 5px;
-    font-size: 15px;
+    align-items: center;
   }
 
   .appContainer {
     padding: 0 5px;
   }
+
+  .header_logo img:hover {
+    background: none;
+    outline: none;
+  }
 }
 
 @media (max-width: 991px) {
-  .header {
+  .headerApp {
     height: 80px;
+    padding-top: 0;
   }
 
-  .link {
+  .header {
     font-size: 14px;
     width: 65%;
     height: 80px;
   }
 
+  .header_logo {
+    margin-top: -10px;
+  }
+
   .line {
-    left: 33.5%;
-    width: 67%;
+    left: 31.5%;
+    width: 69%;
+    bottom: 12px;
   }
 
   .line-2 {
@@ -360,6 +394,15 @@ a:hover {
 
 @media (max-width: 767px) {
 
+  .header {
+    width: 0;
+  }
+
+  .header_logo {
+    margin: 0 auto;
+    margin-top: -15px;
+  }
+
   .appContainer {
     flex-direction: column;
     padding: 0;
@@ -400,7 +443,7 @@ a:hover {
     margin-bottom: 0px;
   }
 
-  h1{
+  h1 {
     width: 90%;
     margin: 0 auto;
     text-align: center;
@@ -408,18 +451,73 @@ a:hover {
     text-transform: uppercase;
   }
 
-  .link {
-    display: none;
-  }
-
   .appH1TextBolt {
     font-size: 48px;
+  }
+
+  .slider {
+    position: fixed;
+    min-width: 30%;
+    left: 70%;
+    height: 660px;
+    background-color: rgba(20, 19, 19, 0.932);
+    top: 0%;
+    transition: .6s ease;
+    padding-right: 30px;
+  }
+
+  .slider.active {
+    left: 100%;
+    transition: .6s ease;
+  }
+
+  .slider ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slider ul li {
+    margin-block: .5rem;
+    list-style: none;
+  }
+
+  .slider ul li a {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    right: 30px;
+  }
+
+  .menu-icon .menu {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .closed .close {
+    display: block;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-top: 16px;
+  }
+
+  .closed {
+    display: block;
   }
 }
 
 @media (max-width: 575px) {
 
-  h1{
+  h1 {
     font-size: 44px;
   }
 
@@ -430,9 +528,25 @@ a:hover {
   .item {
     margin-top: 60px;
   }
+
+
+  .slider {
+    min-width: 35%;
+    left: 65%;
+
+  }
 }
 
 @media (max-width: 530px) {
+
+  .headerApp {
+    height: 60px;
+  }
+
+  .header_logo {
+    margin: 0 auto;
+    margin-top: -30px;
+  }
 
   .header {
     height: 60px;
@@ -441,23 +555,56 @@ a:hover {
   .item {
     margin-top: 60px;
   }
-  
+
   .item p {
     width: 118px;
     height: 118px;
     font-size: 15px;
   }
 
-   .itemTextBolt {
+  .itemTextBolt {
     font-size: 32px;
   }
 
-  h1{
+  h1 {
     width: 100%;
     font-size: 42px;
   }
 
   .appH1TextBolt {
     font-size: 42px;
+  }
+
+  .menu-icon {
+    top: 20px;
+  }
+
+  .closed .close {
+    margin-top: 6px;
+  }
+
+  .slider {
+    min-width: 40%;
+    left: 60%;
+    padding-right: 20px;
+  }
+
+  .slider ul li a {
+    font-size: 13px;
+  }
+
+  .slider ul li {
+    margin-block: .8rem;
+  }
+
+  .menu-icon {
+    right: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .item {
+    margin-top: 30px;
   }
 }

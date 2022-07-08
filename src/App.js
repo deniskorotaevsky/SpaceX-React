@@ -7,25 +7,60 @@ import Guarantees from "./Guarantees";
 import Сompanies from "./Сompanies";
 import Contacts from "./Contacts";
 import logo from './image/logo.png';
+import { Close, MenuOutlined } from '@material-ui/icons';
+import React, { useState } from 'react';
 
 function App() {
+
+  const [active, setActive] = useState(true);
+
+  const showMenu = () => {
+    setActive(!active)
+  }
+
   return (
     <>
       <div className='app'>
         <div className='appBlock'>
-          <div className='header'>
+          <div className='headerApp'>
             <div className='headerBox'>
               <div className='header_logo'>
                 <img src={logo}></img>
               </div>
-              <div className='link'>
-                <Link to='/'>Главная</Link>
-                <Link to='/technology'>Технология</Link>
-                <Link to='/flightSchedule'>График полетов</Link>
-                <Link to='/guarantees'>Гарантии</Link>
-                <Link to='/companies'>О компании</Link>
-                <Link to='/contacts'>Контакты</Link>
+
+              <div className='header'>
+                <div className='menu-icon'>
+                  <MenuOutlined className='menu' onClick={showMenu} />
+                </div>
+
+                <nav className={active ? "slider active" : "slider"}>
+                  <ul>
+                    <div className='closed'>
+                      <Close className='close' onClick={showMenu} />
+                    </div>
+                    <li>
+                      <Link to='/'>Главная</Link>
+                    </li>
+                    <li>
+                      <Link to='/technology'>Технология</Link>
+                    </li>
+                    <li>
+                      <Link to='/flightSchedule'>График полетов</Link>
+                    </li>
+                    <li>
+                      <Link to='/guarantees'>Гарантии</Link>
+                    </li>
+                    <li>
+                      <Link to='/companies'>О компании</Link>
+                    </li>
+                    <li>
+                      <Link to='/contacts'>Контакты</Link>
+                    </li>
+
+                  </ul>
+                </nav>
               </div>
+
             </div>
           </div>
           <div className='appBoxText'>
