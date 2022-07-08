@@ -1,7 +1,7 @@
 import React from "react"
 
 const Сompanies = () => {
-    return <div>Сompanies</div>;
+    return <div></div>;
 }
 
 export default Сompanies;

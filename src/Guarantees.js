@@ -1,7 +1,7 @@
 import React from "react"
 
 const Guarantees = () => {
-    return <div>Guarantees</div>;
+    return <div></div>;
 }
 
 export default Guarantees;
