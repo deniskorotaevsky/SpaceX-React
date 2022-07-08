@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 .app {
   margin: 0 auto;
   height: 660px;
@@ -15,11 +21,11 @@
   flex-direction: column;
 }
 
-.headerApp {
+.navbarApp {
   outline: 1px solid #e9e8e862;
 }
 
-.headerBox {
+.navbarBox {
   display: flex;
   max-width: 1170px;
   align-items: center;
@@ -29,16 +35,17 @@
   height: 100px;
 }
 
-.header_logo {
+.navbar_logo {
   width: 27%;
+  margin-top: 4px;
 }
 
-.header_logo img {
+.navbar_logo img {
   width: 100%;
   height: auto;
 }
 
-.header_logo img:hover {
+.navbar_logo img:hover {
   display: inline-block;
   background:
     linear-gradient(white, white),
@@ -55,8 +62,8 @@
   outline: 1px solid grey;
 }
 
-.header {
-  width: 58%;
+.navbar {
+  width: 58.5%;
   overflow: hidden;
 }
 
@@ -69,15 +76,14 @@
 }
 
 .slider ul li {
-  margin-block: .5rem;
   list-style: none;
 }
 
 .slider ul li a {
-  line-height: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: inline-block;
   text-decoration: none;
-  cursor: pointer;
   color: #d0d1d1;
   border-bottom: 1px solid #92929200;
 }
@@ -95,14 +101,6 @@
 
 .closed {
   display: none;
-}
-
-.closed .close {
-  display: block;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  justify-content: flex-start;
-  font-size: 60px;
 }
 
 .appBoxText {
@@ -166,12 +164,6 @@ h1 {
   margin-top: 65px;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 .line {
   position: relative;
   height: 6.5%;
@@ -222,8 +214,8 @@ h1 {
 }
 
 .item p {
-  width: 178px;
-  height: 178px;
+  width: 48%;
+  height: 48%;
   color: rgba(255, 255, 255, 0.664);
   display: flex;
   justify-content: center;
@@ -308,35 +300,33 @@ h1 {
 }
 
 @media (max-width: 1200px) {
-  .header {
+  .navbar {
     padding: 0 5px;
-    align-items: center;
   }
 
   .appContainer {
     padding: 0 5px;
   }
 
-  .header_logo img:hover {
+  .navbar_logo img:hover {
     background: none;
     outline: none;
   }
 }
 
 @media (max-width: 991px) {
-  .headerApp {
+  .navbarApp {
     height: 80px;
-    padding-top: 0;
   }
 
-  .header {
+  .navbar {
     font-size: 14px;
     width: 65%;
     height: 80px;
   }
 
-  .header_logo {
-    margin-top: -10px;
+  .navbar_logo {
+    margin-top: -15px;
   }
 
   .line {
@@ -393,14 +383,14 @@ h1 {
 }
 
 @media (max-width: 767px) {
-
-  .header {
+  .navbar {
     width: 0;
+    padding: 0;
   }
 
-  .header_logo {
-    margin: 0 auto;
-    margin-top: -15px;
+  .navbar_logo {
+    margin: 10px auto;
+    margin-top: -5px;
   }
 
   .appContainer {
@@ -460,7 +450,7 @@ h1 {
     min-width: 30%;
     left: 70%;
     height: 660px;
-    background-color: rgba(20, 19, 19, 0.932);
+    background-color: rgba(20, 19, 19, 0.966);
     top: 0%;
     transition: .6s ease;
     padding-right: 30px;
@@ -472,24 +462,20 @@ h1 {
   }
 
   .slider ul {
-    display: flex;
     flex-direction: column;
   }
 
   .slider ul li {
     margin-block: .5rem;
-    list-style: none;
   }
 
   .slider ul li a {
-    color: rgb(255, 255, 255);
     font-size: 14px;
-    text-decoration: none;
   }
 
   .menu-icon {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 0;
     right: 30px;
   }
@@ -497,8 +483,9 @@ h1 {
   .menu-icon .menu {
     display: block;
     color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 40px;
     cursor: pointer;
+
   }
 
   .closed .close {
@@ -506,8 +493,8 @@ h1 {
     cursor: pointer;
     color: rgb(255, 255, 255);
     justify-content: flex-start;
-    font-size: 20px;
-    margin-top: 16px;
+    font-size: 40px;
+    margin-top: 6px;
   }
 
   .closed {
@@ -529,26 +516,24 @@ h1 {
     margin-top: 60px;
   }
 
-
   .slider {
     min-width: 35%;
     left: 65%;
-
   }
 }
 
 @media (max-width: 530px) {
 
-  .headerApp {
+  .navbarApp {
     height: 60px;
   }
 
-  .header_logo {
+  .navbar_logo {
     margin: 0 auto;
     margin-top: -30px;
   }
 
-  .header {
+  .navbar {
     height: 60px;
   }
 
@@ -576,34 +561,34 @@ h1 {
   }
 
   .menu-icon {
-    top: 20px;
+    top: 14px;
+  }
+
+  .menu-icon .menu {
+    font-size: 30px;
   }
 
   .closed .close {
-    margin-top: 6px;
+    margin-top: 0px;
+    font-size: 30px;
   }
 
   .slider {
     min-width: 40%;
     left: 60%;
-    padding-right: 20px;
+    padding-right: 10px;
   }
 
   .slider ul li a {
     font-size: 13px;
   }
-
-  .slider ul li {
-    margin-block: .8rem;
-  }
-
+  
   .menu-icon {
-    right: 20px;
+    right: 10px;
   }
 }
 
 @media (max-width: 320px) {
-
   .item {
     margin-top: 30px;
   }
